@@ -7,12 +7,7 @@ Dazu haben wir die Software "NetBeans", aufgrund seines komfortablen GUI Builder
 
 ### Funktionen für die Arbeiter
 
-#### Arbeiter erstellen
-Um alle Funktionen des Programms wirklich nutzen zu können, brauchen wir erstmal Mitarbeiter. Diesen erstellen wir ganz leicht über den Button "Arbeiter erstellen".
-
-Nun erscheinen verschiedene Fenster der Reihe nach auf, wo wir die Informationen der Arbeiter eintragen können.
-
-Beim Datum allerdings, sollte man darauf achten, dass man diesen in der Reihen folge dd-MM-yyyy angibt, da ansonsten eine Fehlmeldung erscheint, und die Eingabe von vorne erfolgen muss.
+1. [Arbeiter Erstellen]()
 
 #### Arbeiter verändern
 Was ist denn, wenn der Nutzer, die Eingabe der Arbeiter falsch getätigt hat? Besteht dieser Fall, können die Informationen über den Button "Arbeiter ändern" verändert werden.
@@ -37,6 +32,11 @@ Dazu klicken Sie den Arbeiter an den Sie zu einem Auftrag zuweisen möchten, und
 #### einen Arbeiter entfernen
 Wenn wir jetzt einen Arbeiter von einer Arbeit zurückziehen möchten, gehen wir eigentlich Analog wie bei der zuweisung vor. Wir wählen einen Bauauftrag und einen Arbeiter aus und betätigen den button "Arbeit entziehen".
 Nun wäre der Arbeiter erfolgreich vom Job entzogen.
+
+---
+
+### Der Button der übrig ist
+Wir haben jetzt noch einen Button über, den von dem Sie noch nicht wissen was er bewirkt. Wenn sie diesen [asdasd](/Users/enesates/IdeaProjects/Projektarbeit-master/Anleitungenn/asdasdads.md)
 
 #### Zugewiesene Arbeiter einsehen
 Sicherlich möchten Sie auch wissen, welche Arbeiter an einem bestimmten Auftrag zugeteilt worden ist. Dazu klicken Sie den gewünschten Bauauftrag an und betätigen dann den Knopf "zugewiesene Arbetiter einsehen".
