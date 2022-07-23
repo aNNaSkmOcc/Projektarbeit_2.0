@@ -42,7 +42,8 @@ Nun wäre der Arbeiter erfolgreich vom Job entzogen.
 ---
 
 ### Der Button der übrig ist
-Wir haben jetzt noch einen Button über, den von dem Sie noch nicht wissen was er bewirkt. Wenn sie diesen [asdasd](/Users/enesates/IdeaProjects/Projektarbeit-master/Anleitungenn/asdasdads.md)
+Wir haben jetzt noch einen Button über, den von dem Sie noch nicht wissen was er bewirkt. Wenn sie diesen Knopf drücken,
+erscheint ein neues Fenster, worin Sie ein Extra finden.
 
 #### Zugewiesene Arbeiter einsehen
 Sicherlich möchten Sie auch wissen, welche Arbeiter an einem bestimmten Auftrag zugeteilt worden ist. Dazu klicken Sie den gewünschten Bauauftrag an und betätigen dann den Knopf "zugewiesene Arbetiter einsehen".
