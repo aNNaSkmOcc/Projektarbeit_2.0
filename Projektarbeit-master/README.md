@@ -7,7 +7,13 @@ Dazu haben wir die Software "NetBeans", aufgrund seines komfortablen GUI Builder
 
 ### Funktionen für die Arbeiter
 
-1. [Arbeiter erstellen](Anleitungenn/ArbeiterErstellen.md)
+#### Arbeiter erstellen
+Um alle Funktionen des Programms wirklich nutzen zu können, brauchen wir erstmal Mitarbeiter. Diesen erstellen wir ganz leicht über den Button "Arbeiter erstellen".
+
+Nun erscheinen verschiedene Fenster der Reihe nach auf, wo wir die Informationen der Arbeiter eintragen können.
+
+Beim Datum allerdings, sollte man darauf achten, dass man diesen in der Reihen folge dd-MM-yyyy angibt, da ansonsten eine Fehlmeldung erscheint, und die Eingabe von vorne erfolgen muss.
+
 
 #### Arbeiter verändern
 Was ist denn, wenn der Nutzer, die Eingabe der Arbeiter falsch getätigt hat? Besteht dieser Fall, können die Informationen über den Button "Arbeiter ändern" verändert werden.
