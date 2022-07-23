@@ -7,7 +7,7 @@ Dazu haben wir die Software "NetBeans", aufgrund seines komfortablen GUI Builder
 
 ### Funktionen für die Arbeiter
 
-1. [Arbeiter Erstellen]()
+1. [Arbeiter erstellen](Anleitungenn/ArbeiterErstellen.md)
 
 #### Arbeiter verändern
 Was ist denn, wenn der Nutzer, die Eingabe der Arbeiter falsch getätigt hat? Besteht dieser Fall, können die Informationen über den Button "Arbeiter ändern" verändert werden.
