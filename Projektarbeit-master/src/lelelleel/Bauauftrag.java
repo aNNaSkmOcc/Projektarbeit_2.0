@@ -10,6 +10,32 @@ import lelelleel.Arbeiter;
 import java.util.*;
 import javax.swing.SpringLayout;
 
+/*
+    Das Programm wurde eigenständig erstellt von der Gruppe 62:
+    * Süleyman Enes Ates :      108 021 200618
+    * Rodin Onay Tanriverdi :   108 021 207888
+    * Alican Cömert :           108 021 202896
+
+    Außerdem wurden folgende Funktionen bearbeitet:
+    Mindestanforderungen:
+        * Datenmodell:  Entwerfen Sie ein UML-Diagramm, welches die oben genannten Ei-
+                        genschaften in einer Klassenstruktur zusammenfasst.
+        * GUI:          Erstellen Sie eine grafische Benutzeroberfläche zum Anzeigen von Mitarbeitern
+                        und Aufträgen.
+        * GUI:          Implementieren Sie Funktionen zum Erstellen, Editieren und Löschen von
+                        Aufträgen und Mitarbeitern.
+        * Zuweisung:    Mitarbeiter sollen zu Aufträgen zugeordnet werden können. Mitarbeiter
+                        können mehrere Aufträge annehmen, und Aufträge können von mehreren Mitarbei-
+                        ter bearbeitet werden.
+        * Export: Aufträge und Mitarbeiter sollen als .csv geschrieben werden
+
+    ---
+
+    Zusätzliche Anforderungen:
+        * Terminbelegung:   Ein Mitarbeiter sollte keine Aufträge zugewiesen bekommen, wenn
+                            dieser zeitlich mit einem anderen Auftrag überschneidet.
+    */
+
 public class Bauauftrag{
 
     //***********************************************

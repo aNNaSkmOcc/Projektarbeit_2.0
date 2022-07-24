@@ -459,6 +459,7 @@ public class FirmaGUI extends JFrame {
         * Zuweisung:    Mitarbeiter sollen zu Aufträgen zugeordnet werden können. Mitarbeiter
                         können mehrere Aufträge annehmen, und Aufträge können von mehreren Mitarbei-
                         ter bearbeitet werden.
+        * Export: Aufträge und Mitarbeiter sollen als .csv geschrieben werden
 
     ---
 
