@@ -242,7 +242,7 @@ public class FirmaGUI extends JFrame {
 
         String berufsBez = JOptionPane.showInputDialog(null, "Berufsbezeichnung?");
         double jahresGehalt = Double.parseDouble(JOptionPane.showInputDialog(null, "Jahresgehalt?"));
-        String einstelDat = JOptionPane.showInputDialog(null, "Einstellungsdatum?");
+        String einstelDat = JOptionPane.showInputDialog(null, "Einstellungsdatum? (Datum bitte in dd-MM-yyyy eingeben)");
         boolean istVorhanden = false;
         
         //Hier wird nochmal überprüft, ob die MitarbeiterID bereits existiert oder nicht. Falls er bereits existiert, dann kriegt er den status "istVorhanden"
