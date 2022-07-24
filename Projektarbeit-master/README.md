@@ -61,5 +61,9 @@ erscheint ein neues Fenster, worin Sie weitere Extras finden.
 Sicherlich möchten Sie auch wissen, welche Arbeiter an einem bestimmten Auftrag zugeteilt worden ist. Dazu klicken Sie den gewünschten Bauauftrag an und betätigen dann den Knopf "zugewiesene Arbetiter einsehen".
 Nun erscheint ein weiteres Fenster, worin Sie alle zum ausgewählten Auftrag zugewiesene Arbeiter einsehen.
 
+#### Export Bauaufträgeliste/Arbeiterliste
+Mit diesem Button, können wir unsere Mitarbeiterliste und Bauauftragliste exportieren. Man sollte nur darauf achten, dass die Listen
+inhalt besitzen, weil sonst eine Fehlermeldung erscheint.
+
 ---
 

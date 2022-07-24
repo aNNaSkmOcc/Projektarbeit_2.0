@@ -7,8 +7,8 @@ import java.io.*;
 import java.time.LocalDate;
 
 public class erweitert extends JFrame {
-    private JButton exportButton;
-    private JButton export;
+    private JButton exportBauaufträgeButton;
+    private JButton importBauaufträgeButton;
     private JButton zugewieseneArbeiterButton;
     private JPanel mainFrame;
     private JButton exportArbeiterlisteButton;
@@ -37,10 +37,14 @@ public class erweitert extends JFrame {
 
 
   */
-        exportButton.addActionListener(new ActionListener() {
+        exportBauaufträgeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
+                    if(Bauauftrag.bauAuftragListe.isEmpty()){
+                        JOptionPane.showMessageDialog(null,"Sie müssen erst Bauaufträge hinzufügen. Sonst exportieren Sie eine leere Liste");
+                        return;
+                    }
                     FileWriter writer = new FileWriter("Bauauftragliste.csv");
                     PrintWriter out = new PrintWriter(writer);
 
@@ -64,6 +68,7 @@ public class erweitert extends JFrame {
                     }
                     writer.close();
                     out.close();
+                    JOptionPane.showMessageDialog(null,"Erfolgreich Exportiert");
                 } catch (IOException ex) {
                     throw new RuntimeException(ex);
                 }
@@ -74,6 +79,10 @@ public class erweitert extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
+                    if(Arbeiter.arbeiterListe.isEmpty()){
+                        JOptionPane.showMessageDialog(null,"Sie müssen erst Arbeiter hinzufügen, sonst würden sie eine leere Liste exportieren");
+                        return;
+                    }
                     FileWriter writer = new FileWriter("Mitarbeiterliste.csv");
                     PrintWriter out = new PrintWriter(writer);
 
@@ -91,6 +100,7 @@ public class erweitert extends JFrame {
                     }
                     writer.close();
                     out.close();
+                    JOptionPane.showMessageDialog(null,"Erfolgreich Exportiert");
                 } catch (IOException ex) {
                     throw new RuntimeException(ex);
                 }
