@@ -359,6 +359,8 @@ public class FirmaGUI extends JFrame {
         String eingabeStartDatum = (JOptionPane.showInputDialog(null, "Startdatum? (Bitte die Eingabe in dd(Tage) - mm(Monat in Zahl) - yyyy(Jahr))"));
         String eingabeEndDatumm = (JOptionPane.showInputDialog(null, "Enddatum? (Bitte die Eingabe in dd(Tage) - mm(Monat in Zahl) - yyyy(Jahr))"));
 
+
+
         boolean istVorhanden = false;
         
         //Hier wird überprüft, ob die eingegebene ID bereits existiert. Denn wenn doch, dann erhält sie den Status "ist Vorhanden"
@@ -372,6 +374,10 @@ public class FirmaGUI extends JFrame {
         //Ein try-catch wird für die Eingabe des Datums benötigt, falls man diese falsch eingibt.
         if (istVorhanden == false) {
             try {
+                if(Bauauftrag.stringZuDatumKonvertieren(eingabeStartDatum).isAfter(Bauauftrag.stringZuDatumKonvertieren(eingabeEndDatumm))){
+                    JOptionPane.showMessageDialog(null,"der Startdatum kann nicht nach dem Enddatum sein !");
+                    return;
+                }
                 Bauauftrag.bauauftragErstellen(auftragGeber, ort, bauauftragID, adresse, beschreibungg, Bauauftrag.stringZuDatumKonvertieren(eingabeStartDatum), Bauauftrag.stringZuDatumKonvertieren(eingabeEndDatumm));
                 bauauftragZurTabelleHinzufügen();
             } catch (Exception e) {
@@ -409,7 +415,8 @@ public class FirmaGUI extends JFrame {
         }
     }
     //-----------------------------------------
-    
+
+    //Methode um die zusätzliche GUI für "Import/Export/zugewiesene Arbeiter" zu öffnen
     private void erweitertActionPerformed(java.awt.event.ActionEvent evt) {
         /*
         Hier wird die GUI "zugewieseneMitArbeiter aufgerufen.
@@ -436,7 +443,7 @@ public class FirmaGUI extends JFrame {
         // End of variables declaration                   
 
     /*
-    Das Programm wurde eigenständig erstellt von:
+    Das Programm wurde eigenständig erstellt von der Gruppe 62:
     * Süleyman Enes Ates :      108 021 200618
     * Rodin Onay Tanriverdi :   108 021 207888
     * Alican Cömert :           108 021 202896
@@ -468,8 +475,8 @@ public class FirmaGUI extends JFrame {
     public void ArbeiterZurTabelleHinzufügen() {
         /*
         Hier wird erstmal ein Array "row" vom Typ "Object" erstellt. Wir können ganz einfach ein Array nutzen,
-        weil die anzahl der Spalten bzw. Attribute fix ist und nicht noch vergrößert bzw.
-        verkleinert werden muss. Der Datentyp "Object" ist quasi ein Allrouder unter den
+        weil die anzahl der Spalten bzw. Attribute fix ist und während der Laufzeit nicht noch vergrößert bzw.
+        verkleinert werden muss. Der Datentyp "Object" ist quasi ein Allrounder unter den
         Datentypen. Der Vorteil ist, dass wir praktisch alles reinpacken können (int, String,Objekte etc.)
         
         Das DefaultTableModel, kann man sich vorstellen wie ein 2-Dimensionales Array. Der Vorteil dieser Klasse ist es,
@@ -648,8 +655,6 @@ public class FirmaGUI extends JFrame {
             */
             Bauauftrag.bauAuftragListe.remove(table2.getSelectedRow());
             model.removeRow(table2.getSelectedRow());
-            System.out.println(Arbeiter.arbeiterListe.get(table1.getSelectedRow()).getAuftragsBegin());
-            System.out.println(Arbeiter.arbeiterListe.get(table1.getSelectedRow()).getAuftragsEnde());
             
         }
     }
@@ -664,7 +669,8 @@ public class FirmaGUI extends JFrame {
         DefaultTableModel model = (DefaultTableModel) this.getTableBauaufträge().getModel();
         if (table.getSelectedRow() != -1) {
             /*
-            Auch hier klappern wir viele Fälle ab um zu überprüfen, welches Attribut wir jetzt verändern müssen.
+            Auch hier klappern wir viele Fälle ab um zu überprüfen, welches Attribut wir jetzt verändern müssen. Hier wird also
+            überprüft, In Welcher spalte sich die angeklickte Zelle befindet.
             */
             if (model.getColumnName(table.getSelectedColumn()) == "ID") {
                 int aenderungZahl = Integer.parseInt(JOptionPane.showInputDialog(null, "Geben Sie die neue ID ein"));
@@ -676,28 +682,37 @@ public class FirmaGUI extends JFrame {
                 }
                 model.setValueAt(aenderungZahl, table.getSelectedRow(), table.getSelectedColumn());
                 Bauauftrag.bauAuftragListe.get(table.getSelectedRow()).setBauauftragsID(aenderungZahl);
-            } else if (model.getColumnName(table.getSelectedColumn()) == "Auftraggeber") {
+            }
+            else if (model.getColumnName(table.getSelectedColumn()) == "Auftraggeber") {
                 String aenderungWort = JOptionPane.showInputDialog(null, "Wie soll der neue Auftraggeber heißen?");
                 model.setValueAt(aenderungWort, table.getSelectedRow(), table.getSelectedColumn());
                 Bauauftrag.bauAuftragListe.get(table.getSelectedRow()).setAuftragGeber(aenderungWort);
 
-            } else if (model.getColumnName(table.getSelectedColumn()) == "Adresse") {
+            }
+            else if (model.getColumnName(table.getSelectedColumn()) == "Adresse") {
                 String aenderungWort = JOptionPane.showInputDialog(null, "Geben Sie die neue Adresse ein");
                 model.setValueAt(aenderungWort, table.getSelectedRow(), table.getSelectedColumn());
                 Bauauftrag.bauAuftragListe.get(table.getSelectedRow()).setAdresse(aenderungWort);
 
-            } else if (model.getColumnName(table.getSelectedColumn()) == "Ort") {
+            }
+            else if (model.getColumnName(table.getSelectedColumn()) == "Ort") {
                 String aenderungWort = JOptionPane.showInputDialog(null, "Geben Sie den neuen Ort ein");
                 model.setValueAt(aenderungWort, table.getSelectedRow(), table.getSelectedColumn());
                 Bauauftrag.bauAuftragListe.get(table.getSelectedRow()).setOrt(aenderungWort);
 
-            } else if (model.getColumnName(table.getSelectedColumn()) == "Tätigkeit") {
+            }
+            else if (model.getColumnName(table.getSelectedColumn()) == "Tätigkeit") {
                 String aenderungWort = JOptionPane.showInputDialog(null, "Geben Sie die neue Tätigkeit ein");
                 model.setValueAt(aenderungWort, table.getSelectedRow(), table.getSelectedColumn());
                 Bauauftrag.bauAuftragListe.get(table.getSelectedRow()).setBeschreibung(aenderungWort);
 
-            } else if (model.getColumnName(table.getSelectedColumn()) == "Anfangsdatum") {
+            }
+            else if (model.getColumnName(table.getSelectedColumn()) == "Anfangsdatum") {
                 String aenderungWort = JOptionPane.showInputDialog(null, "Geben Sie das neue Anfangsdatum ein!!");
+                if(Bauauftrag.stringZuDatumKonvertieren(aenderungWort).isAfter(Bauauftrag.bauAuftragListe.get(table.getSelectedRow()).getEndDatum())){
+                    JOptionPane.showMessageDialog(null,"Das Startdatum, kann nicht nach dem Enddatum sein");
+                    return;
+                }
                 model.setValueAt(Bauauftrag.stringZuDatumKonvertieren(aenderungWort), table.getSelectedRow(), table.getSelectedColumn());
 
 
@@ -711,8 +726,13 @@ public class FirmaGUI extends JFrame {
                 }
                 Bauauftrag.bauAuftragListe.get(table.getSelectedRow()).setStartDatum(Bauauftrag.stringZuDatumKonvertieren(aenderungWort));
 
-            } else if (model.getColumnName(table.getSelectedColumn()) == "Enddatum") {
+            }
+            else if (model.getColumnName(table.getSelectedColumn()) == "Enddatum") {
                 String aenderungWort = JOptionPane.showInputDialog(null, "Geben Sie das neue Enddatum ein!!");
+                if(Bauauftrag.stringZuDatumKonvertieren(aenderungWort).isBefore(Bauauftrag.bauAuftragListe.get(table.getSelectedRow()).getStartDatum())){
+                    JOptionPane.showMessageDialog(null,"Das Enddatum kann nicht vor dem Anfangsdatum sein !!");
+                    return;
+                }
                 model.setValueAt(Bauauftrag.stringZuDatumKonvertieren(aenderungWort), table.getSelectedRow(), table.getSelectedColumn());
 
                 for(int i = 0;i < Bauauftrag.bauAuftragListe.get(table.getSelectedRow()).getBauAuftragMitArbeiter().size();i++) {
@@ -725,8 +745,6 @@ public class FirmaGUI extends JFrame {
                 }
                 Bauauftrag.bauAuftragListe.get(table.getSelectedRow()).setEndDatum(Bauauftrag.stringZuDatumKonvertieren(aenderungWort));
             }
-
-
 
         }
     }
@@ -794,7 +812,7 @@ public class FirmaGUI extends JFrame {
          */
         Bauauftrag.bauAuftragListe.get(table2.getSelectedRow()).getBauAuftragMitArbeiter().add(a1);
 
-        //Danach erhalten die Mitarbeiter dann das Start und das Encdatum des Auftrags, zu dem sie Eingeteilt werden.
+        //Danach erhalten die Mitarbeiter dann das Start und das Enddatum des Auftrags, zu dem sie Eingeteilt werden.
         Arbeiter.arbeiterListe.get(table1.getSelectedRow()).getAuftragsBegin().add(Bauauftrag.bauAuftragListe.get(table2.getSelectedRow()).getStartDatum());
         Arbeiter.arbeiterListe.get(table1.getSelectedRow()).getAuftragsEnde().add(Bauauftrag.bauAuftragListe.get(table2.getSelectedRow()).getEndDatum());
 
