@@ -108,9 +108,7 @@ public class erweitert extends JFrame {
             }
         });
 
-
-
-
+        /*
         importArbeiterlisteButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed (ActionEvent e) {
@@ -134,5 +132,7 @@ public class erweitert extends JFrame {
 
             }
         });
+
+         */
     }
 }
