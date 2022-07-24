@@ -17,6 +17,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/Projektarbeit-master/Bauauftragliste.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/Projektarbeit-master/Mitarbeiterliste.csv">
           <value>
             <Attribute>
@@ -25,6 +32,27 @@
           </value>
         </entry>
         <entry key="$USER_HOME$/Downloads/Projektarbeit-master (10) 2/Projektarbeit-master/src/lelelleel/Arbeiterexportieren.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Downloads/Projektarbeit-master (10)/Bauauftragliste.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Downloads/Projektarbeit-master (10)/Mitarbeiterliste.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Downloads/Projektarbeit-master (10)/Projektarbeit-master/src/lelelleel/Arbeiterexportieren.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
