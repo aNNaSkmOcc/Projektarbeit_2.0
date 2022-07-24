@@ -79,7 +79,7 @@ public class FirmaGUI extends JFrame {
 
             },
             new String [] {
-                "ID", "Name", "Beruf", "Jahresgehalt", "Einstellungsdatum", "hat Job"
+                "ID", "Name - Nachname", "Beruf", "Jahresgehalt", "Einstellungsdatum", "hat Auftrag"
             }
         ));
         jScrollPane1.setViewportView(tableArbeiter);
