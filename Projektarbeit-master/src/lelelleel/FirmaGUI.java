@@ -726,7 +726,7 @@ public class FirmaGUI extends JFrame {
                 Bauauftrag.bauAuftragListe.get(table.getSelectedRow()).setEndDatum(Bauauftrag.stringZuDatumKonvertieren(aenderungWort));
             }
 
-            Arbeiter.arbeiterListeAusgeben();
+
 
         }
     }
@@ -799,7 +799,7 @@ public class FirmaGUI extends JFrame {
         Arbeiter.arbeiterListe.get(table1.getSelectedRow()).getAuftragsEnde().add(Bauauftrag.bauAuftragListe.get(table2.getSelectedRow()).getEndDatum());
 
         //Nun folgen ein paar optische dinger, wie z.B dass eine Bestätigung erscheint, oder der Mitarbeiter dann einen haken bekommt.
-        JOptionPane.showMessageDialog(null, "Arbeier erfolgreich hinzugefügt");
+        JOptionPane.showMessageDialog(null, "Arbeiter erfolgreich hinzugefügt");
         Arbeiter.arbeiterListe.get(table1.getSelectedRow()).setHatAuftrag(true);
         table1.setValueAt('✓', table1.getSelectedRow(), 5);
 
@@ -845,7 +845,7 @@ public class FirmaGUI extends JFrame {
             Arbeiter.arbeiterListe.get(table1.getSelectedRow()).setHatAuftrag(false);
             table1.setValueAt('✖', table1.getSelectedRow(), 5);
         }
-        JOptionPane.showMessageDialog(null, "Arbeier erfolgreich entfernt");
+        JOptionPane.showMessageDialog(null, "Arbeiter erfolgreich entfernt");
     }
 
 
