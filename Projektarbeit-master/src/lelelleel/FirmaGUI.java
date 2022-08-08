@@ -28,8 +28,8 @@ public class FirmaGUI extends JFrame {
         mitarbeiterHinzufügenButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         /*
-        die Attribute "tableArbeiter" und die Methode "tableArbeiter" sind ja Tabellen. Standartgemäß ist es eingeschaltet,
-        dass man die Tabelle bearbeiten können. Nun, verändert man aber direkt danach die Methode, indem man direkt sagt, dass die bearbeitung
+        die Attribute "tableArbeiter" und "tableBauaufträge" sind ja Tabellen. Standartgemäß ist es eingeschaltet,
+        dass man die Tabelle bearbeiten kann. Nun, verändert man aber direkt danach die Methode, indem man direkt sagt, dass die bearbeitung
         der Zellen nicht eingeschaltet ist, indem man ein "false" zurückgibt.
          */
         tableArbeiter = new javax.swing.JTable(){
